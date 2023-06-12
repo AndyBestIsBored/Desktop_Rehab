@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<LINK REL="stylesheet" HREF="vs70_5.css">
+<LINK HREF="seealso.gif">
+<HTML DIR="LTR"><HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>Getting Started With ATICombinedDAQFT</TITLE>
+<SCRIPT SRC="vs70link.js"></SCRIPT>
+<SCRIPT SRC="vs70.js"></SCRIPT>
+</HEAD>
+<body topmargin="0" id="bodyID" class = "dtBODY">
+<object id="obj_cook" classid="clsid:59CC0C20-679B-11D2-88BD-0800361A1803" style="display:none;"></object>
+
+<div id="nsbanner">
+<div id="bannerrow1">
+<TABLE CLASS="bannerparthead" CELLSPACING=0>
+<TR ID="hdr">
+<TD CLASS="runninghead" nowrap>ATI&nbsp;Industrial&nbsp;Automation&nbsp;&nbsp;&nbsp;ATICombinedDAQFT .NET Class Library</TD>
+<TD CLASS="product" nowrap>&nbsp;</TD>
+</TR>
+</TABLE>
+</div>
+</div>
+<DIV id="nstext" valign="bottom">
+<br>
+<font size="1"><i><a href="http://www.ati-ia.com/">Visit our website.</a></i></font>
+<br>
+<br>
+
+<H1 class="dtH1"><A NAME="Getting Started With ATICombinedDAQFT"></A>Getting Started With ATICombinedDAQFT</H1>
+
+<P>This is a guide to the most common tasks you will perform when using the ATICombinedDAQFT class library.  Specifically, you will see how to load a calibration file, start the hardware data acquisition, and read force/torque values from the F/T system.</P>
+
+<H2 >Common Functions</H2>
+
+<H4 class="dtH4">LoadCalibrationFile( calFile, calibrationIndex )</h4>
+<P>Always call this function before starting the hardware acquisition.  LoadCalibrationFile takes the calibration information from the .cal file, such as the calibration matrix and voltage range of the strain gauges.  LoadCalibrationFile takes two arguments: calFile, the path to the calibration (*.cal) file for the F/T system you are using, and calibrationIndex, which is the index of the calibration within that .cal file you wish to use.  Calibration files may contain multiple calibrations, but if your file contains only one calibration, you will always want to set calibrationIndex to 1.</P>
+
+<H4 class="dtH4">StartSingleSampleAcquisition( deviceName, sampleFrequency, averaging, firstChannel, useTempComp )</h4>
+<p>StartSingleSampleAcquisition starts the DAQ hardware acquisition and allows you to read single data points on demand.</p>
+
+<H4 class="dtH4">StartBufferedAcquisition( deviceName, sampleFrequency, averaging, firstChannel, useTempComp,  bufferSize )</h4>
+<p>StartBufferedAcquisition starts a buffered acquisition task that you can use to collect continous data.</p>
+
+<H4 class="dtH4">StopAcquisition()</h4>
+<p>StopAcquisition stops the curerntly running hardware acquisition, whether it is buffered or single-sample.</p>
+
+<H4 class="dtH4">BiasCurrentLoad()</h4>
+<p>BiasCurrentLoad biases out the load that is currently applied to the sensor.  This function is useful for removing the effects of any constant tooling you place on the transducer.</p>
+
+<H4 class="dtH4">ReadSingleFTRecord( readings )</h4>
+<p>Use ReadSingleFTRecord after calling StartSingleSampleAcquisition to read a single data point.</p>
+
+<H4 class = "dtH4">ReadBufferedFTRecords( numRecords, readings )</h4>
+<p>ReadBufferedFTRecords reads a set of records from the DAQ hardware.  Use this function after starting the acquisition using StartBufferedAcquisition.</p>
+
+<H2>Performing Simple Tasks</H2>
+
+<P>These samples are written using Visual Basic style pseudocode, and assume a variable named myFTSystem, of type ATICombinedDAQFT.FTSystem, exists and has been initialized.</p>
+
+<h4 class="dtH4">Reading Single Samples</h4>
+<font color="green">'first, load the calibration file</font><br>
+myFTSystem.LoadCalibrationFile( "c:\temporary\ft3484.cal", 1)<br>
+<font color="green">'now, start the task using the NI-DAQmx device "dev1", a sample rate of 1000 Hz with a 10 sample averaging filter, <br>
+'channel 0 is the first channel that the transducer is connected to, and no software temperature compensation.</font><br>
+myFTSystem.StartSingleSampleAcquisition( "dev1", 1000, 10, 0, False )<br>
+<font color="green">'Bias out the constant load</font><br>
+myFTSystem.BiasCurrentLoad()<br>
+'prompt the user to place a load on the sensor and take a reading
+MsgBox( "Please place a load on the sensor." )<br>
+dim ftReadings(5) as Double <font color="green">'the force/torque readings from the sensor</font><br>
+myFTSystem.ReadSingleFTRecord( ftReadings )<br>
+<font color="green">'Do stuff with the readings...</font><br>
+.<br>
+.<br>
+.<br>
+
+<H4 class="dtH4">Reading Buffered Data</h4>
+<font color="green">'load calibration</font><br>
+myFTSystem.LoadCalibrationFile( "C:\temporary\ft3484.cal", 1 )<br>
+<font color="green">'you should always bias your data before starting buffered acquisition,<br>
+'so start a single sample acquisition for the purposes of biasing<br></font>
+myFTSystem.StartSingleSampleAcquisition( "dev1", 1000, 10, 0, False )<br>
+myFTSystem.BiasCurrentLoad()<br>
+myFTSystem.StopAcquisition()<br>
+<font color="green">'Start buffered acquisition with a buffer size of 200.<br>
+'We'll then read 100 samples at a time (double-buffering)</font><br>
+myFTSystem.StartBufferedAcquisition( "dev1", 1000, 10, 0, False, 200 )<br>
+<font color="green">'Read data in a loop and perform actions with it</font><br>
+While ( stillCollectingData )<br>
+&nbsp;&nbsp;&nbsp; dim bufferedReadings( 599 ) as Double <font color="green">'the buffered f/t readings</font><br>
+&nbsp;&nbsp;&nbsp; myFTSystem.ReadBufferedFTRecords( 100, bufferedReadings )<br>
+&nbsp;&nbsp;&nbsp;<font color="green">'perform actions with data</font><br>
+&nbsp;&nbsp;&nbsp;.<br>
+&nbsp;&nbsp;&nbsp;.<br>
+&nbsp;&nbsp;&nbsp;.<br>
+End While<br>
+
+<P class="fineprint"></P>
+
+<H4 class="dtH4">See Also</H4>
+
+<P><A HREF="LoadCalibrationFile.htm">LoadCalibrationFile</A> | <A HREF="StartSingleSampleAcquisition.htm">StartSingleSampleAcquisition</A> | <A HREF="StartBufferedAcquisition.htm">StartBufferedAcquisition</A> | <A HREF="StopAcquisition.htm">StopAcquisition</a> | <A HREF="BiasCurrentLoad.htm">BiasCurrentLoad</a> | <A HREF="ReadSingleFTRecord.htm">ReadSingleFTRecord</a> | <A HREF="ReadBufferedFTRecords.htm">ReadBufferedFTRecords</a></p>
+</div>
+
+</BODY>
+</HTML>
+

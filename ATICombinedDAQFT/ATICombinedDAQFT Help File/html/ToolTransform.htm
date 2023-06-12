@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<LINK REL="stylesheet" HREF="vs70_5.css">
+<LINK HREF="seealso.gif">
+<HTML DIR="LTR"><HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+
+<TITLE>ToolTransform</TITLE>
+
+<SCRIPT SRC="vs70link.js"></SCRIPT>
+<SCRIPT SRC="vs70.js"></SCRIPT>
+</HEAD>
+<body topmargin="0" id="bodyID" class = "dtBODY">
+<object id="obj_cook" classid="clsid:59CC0C20-679B-11D2-88BD-0800361A1803" style="display:none;"></object>
+
+<div id="nsbanner">
+<div id="bannerrow1">
+<TABLE CLASS="bannerparthead" CELLSPACING=0>
+<TR ID="hdr">
+<TD CLASS="runninghead" nowrap>ATI&nbsp;Industrial&nbsp;Automation&nbsp;&nbsp;&nbsp;ATICombinedDAQFT .NET Class Library</TD>
+<TD CLASS="product" nowrap>&nbsp;</TD>
+</TR>
+</TABLE>
+</div>
+</div>
+<DIV id="nstext" valign="bottom">
+<br>
+<font size="1"><i><a href="http://www.ati-ia.com/">Visit our website.</a></i></font>
+<br>
+<br>
+
+<H1 class="dtH1"><A NAME="ToolTransform"></A>ToolTransform( transformVector() As Double, distanceUnits As String, angleUnits As String ) As Integer</H1>
+
+<P>Create a tool transformation to measure the forces and torques acting at a point other than the
+		origin of the transducer.</P>
+
+<H2 >Arguments</H2>
+
+<H4 class="dtH4">transformVector</h4>
+<P><b>In: </b>
+A 6-element array with the displacements and rotations relative to the origin of the transducer. There must be six elements in the array.  If you do not wish to perform a particular displacement or rotation, set the corresponding value to 0.  Note that rotations are performed in the order X, Y, then Z.<br>
+transformVector[0] = displacement along x axis<br>
+				transformVector[1] = displacement along y axis<br>
+				transformVector[2] = displacement along z axis<br>
+				transformVector[3] = rotation about x axis (right-hand rotation)<br>
+				transformVector[4] = rotation about y axis (right-hand rotation)<br>
+				transformVector[5] = rotatation about z axis (right-hand rotation)<br>
+</P>
+
+
+<H4 class="dtH4">distanceUnits</h4>
+<P><b>In: </b>The units of the displacements.  Acceptable values are "in", "m", "mm", "cm", or "ft".
+</P>
+
+
+<H4 class="dtH4">angleUnits</h4>
+<P><b>In: </b>The units of the rotations.  Acceptable values are "deg", "degrees", "degree", "rad",
+				"radians", or "radian".
+</P>
+
+
+<H2>Returns</H2>
+
+<p>0: successful completion<br>
+			1: Calibration not initialized.  Call <a href="LoadCalibrationFile.htm">LoadCalibrationFile</a>before calling this function<br>
+			2: Invalid Distance Units<br>
+			3: Invalid Angle Units</p>
+
+<P class="fineprint"></P>
+
+<H4 class="dtH4">See Also</H4>
+
+<P>
+<a href="LoadCalibrationFile.htm">LoadCalibrationFile</a></P>
+</div>
+
+</BODY>
+</HTML>
+

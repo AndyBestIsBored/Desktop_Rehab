@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<LINK REL="stylesheet" HREF="vs70_5.css">
+<LINK HREF="seealso.gif">
+<HTML DIR="LTR"><HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>ATI DAQ FT .NET Demo: Data Collection Screen</TITLE>
+<SCRIPT SRC="vs70link.js"></SCRIPT>
+<SCRIPT SRC="vs70.js"></SCRIPT>
+</HEAD>
+<body topmargin="0" id="bodyID" class = "dtBODY">
+<object id="obj_cook" classid="clsid:59CC0C20-679B-11D2-88BD-0800361A1803" style="display:none;"></object>
+
+<div id="nsbanner">
+<div id="bannerrow1">
+<TABLE CLASS="bannerparthead" CELLSPACING=0>
+<TR ID="hdr">
+<TD CLASS="runninghead" nowrap>ATI&nbsp;Industrial&nbsp;Automation&nbsp;&nbsp;&nbsp;ATI DAQ FT .NET Demo</TD>
+<TD CLASS="product" nowrap>&nbsp;</TD>
+</TR>
+</TABLE>
+</div>
+</div>
+<DIV id="nstext" valign="bottom">
+<br>
+<font size="1"><i><a href="http://www.ati-ia.com/">Visit our website.</a></i></font>
+<br>
+<br>
+
+<H1 class="dtH1"><A NAME="Data Collection Screen"></A>Data Collection Screen</H1>
+
+<P>This screen allows you to collect streaming data continously to file.  The resulting comma-delimited file can be opened directly in Excel and many other applications. </P>
+
+<P>The output file has a timestamp at the beginning of the file, but no timestamp is necessary for individual records, because every sample collected represents exactly one period of the effective sampling rate.  The effective sampling rate is is the raw sample rate divided by the averaging level.  Both the raw sample rate and averaging level are included in the output file.  To set the raw sample rate and the averaging level, see the <a href="DAQ Device Options Screen.htm">DAQ Device Options Screen</a>.</p>
+
+<H4 class="dtH4">Filename</H4>
+<P>The path to the file to save data in.</P>
+
+<H4 class="dtH4">Buffer Size</H4>
+<P>The buffer size is the number of data points that are written to file at one time.  While collecting data, the program will read &lt;buffer size&gt; samples, perform the math to convert the strain gauge voltages into forces and torques, and write the resulting force and torque values to file.  This repeats until you hit the Stop button or a stop condition you specify is met.</p>
+<p>If the buffer size is too large, the program will spend a lot of time waiting to read data from the DAQ hardware, and may appear to hang up.  If the buffer size is too small, the program may not have enough time to perform the matrix calculations between reading buffers, and data may be missed (an error message will be displayed if any data points are missed).  The buffer size always defaults to one-tenth (1/10) of the effective sample rate, which generally provides good performance in both application responsiveness and data collection.  </p>
+<p>In general, you should only increase the buffer size if your computer is experiencing general performance issues.  If increasing the buffer size does not alleviate the problem, you may have to decrease the sample rate.</P>
+
+<H4 class="dtH4">Start and Stop Button</H4>
+<P>This button starts and stops data collection.  When data is not being collected, press this button to start collecting.  When data is being collected, press this button to stop collecting.  This button is grayed-out until you set the filename.</P>
+
+<H4 class="dtH4">Collect Gauge Values</H4>
+<P>This checkbox allows you to collect raw gauge data, instead of resolved forces and torques.  When you are collecting gauge data, the readings are not buffered, so the buffer size field is not used.  Also, since data is not buffered, no error message is displayed if data points are missed.  This method of collecting data is primarily for troubleshooting purposes.
+</P>
+
+<H4 class="dtH4">Bias Button</H4>
+<P>This button biases (tares) the current load of the sensor.  There is a live display of data in the Collection Status section when data is not being collected, so you can make sure that the sensor is properly biased before beginning collection.</P>
+
+<H4 class="dtH4">Collection Status</H4>
+<P>This area of the screen displays the status of the current collection.  While collection is going on, the number of records saved so far will be displayed here, along with the first reading in the most recent buffer.  When you are not collecting data, there is a live display of data so you can be sure the sensor is properly biased.</P>
+
+<H4 class="dtH4">Delay Before Start</H4>
+<P>Here you can specify a delay before data is recorded to file.  You can choose to have no delay (the default selection), to skip a certain number of samples at the beginning, or to wait for a specified number of milliseconds after the Start button is pressed.</P>
+
+<H4 class="dtH4">Stop Condition</H4>
+<P>The stop condition determines when data collection is stopped.  You can continue collecting until the Stop button is pressed (the default selection), until a certain number of milliseconds have passed, or after a certain number of samples are collected.</P>
+
+<P class="fineprint"></P>
+
+<H4 class="dtH4">See Also</H4>
+
+<P><A HREF="DAQ Device Options Screen.htm">DAQ Device Options Screen</A> | <A HREF="FT Sensor Options Screen.htm">F/T Sensor Options Screen</A></P>
+</div>
+
+</BODY>
+</HTML>
+

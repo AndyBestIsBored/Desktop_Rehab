@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<LINK REL="stylesheet" HREF="vs70_5.css">
+<LINK HREF="seealso.gif">
+<HTML DIR="LTR"><HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>StartBufferedAcquisition</TITLE>
+<SCRIPT SRC="vs70link.js"></SCRIPT>
+<SCRIPT SRC="vs70.js"></SCRIPT>
+</HEAD>
+<body topmargin="0" id="bodyID" class = "dtBODY">
+<object id="obj_cook" classid="clsid:59CC0C20-679B-11D2-88BD-0800361A1803" style="display:none;"></object>
+
+<div id="nsbanner">
+<div id="bannerrow1">
+<TABLE CLASS="bannerparthead" CELLSPACING=0>
+<TR ID="hdr">
+<TD CLASS="runninghead" nowrap>ATI&nbsp;Industrial&nbsp;Automation&nbsp;&nbsp;&nbsp;ATICombinedDAQFT .NET Class Library</TD>
+<TD CLASS="product" nowrap>&nbsp;</TD>
+</TR>
+</TABLE>
+</div>
+</div>
+<DIV id="nstext" valign="bottom">
+<br>
+<font size="1"><i><a href="http://www.ati-ia.com/">Visit our website.</a></i></font>
+<br>
+<br>
+
+<H1 class="dtH1"><A NAME="StartBufferedAcquisition"></A>StartBufferedAcquisition( deviceName, Double sampleFrequency, Integer averaging,
+			Integer firstChannel, Boolean useTempComp, Integer bufferSize ) As Integer</H1>
+
+<P>Starts the buffered acquisition, which allows you to collect high-speed data.</P>
+
+<P>In order to preserve data continuity, once buffered data collection is started, you should not call any functions which will cause a hardware read to occur, other than <a href="ReadBufferedFTRecords.htm">ReadBufferedFTRecords</a>.<p>
+<p>Specifically, if you wish to bias the F/T readings, you should not call <a href="BiasCurrentLoad.htm">BiasCurrentLoad</a> after calling StartBufferedAcquisition.  In order to bias the buffered F/T data, it is recommended that you first start a single sample acquisition using <a href="StartSingleSampleAcquisition.htm">StartSingleSampleAcquisition</a> with the same sample rate you wish to collect buffered data at, and call BiasCurrentLoad before you start the buffered data collection.  You can see an example of this method in the <a href="ATICombinedDAQFT Getting Started.htm">ATICombinedDAQFT Getting Started</a> topic, in the "Reading Buffered Data" example.  If you cannot do this, you should call <a href="BiasKnownLoad.htm">BiasKnownLoad</a> while buffered acquisition is running, since that function does not cause a hardware read.</p>
+
+<H2 >Arguments</H2>
+
+<H4 class="dtH4">deviceName</h4>
+<P><b>In:</b> The name of the device which the transducer is connected to.</P>
+
+<H4 class="dtH4">sampleFrequency</h4>
+<P><b>In:</b> The frequency at which to sample the transducer voltages.  Divide this number by the averaging value to get the effective (actual) sample rate.</P>
+
+<H4 class="dtH4">averaging</h4>
+<P><b>In:</b> The size of the averaging filter.  Divide the hardware sample rate by this number to get the effective sample rate.</P>
+
+<H4 class="dtH4">firstChannel</h4>
+<P><b>In:</b> The lowest-numbered channel to which the transducer is attached.  The ATICombinedDAQFT class library assumes that the transducer is atached to sequential channels, with gauge 0 connected to the lowest-numbered channel, gauge 1 attached to the next lowest-numbered channel, and so on.  If software temperature compensation is used, the thermistor should be attached to the next lowest-numbered channel after gauge 5.  If you bought your F/T system including cables from ATI, the channels are probably already in the correct order.</P>
+
+<H4 class="dtH4">useTempComp</h4>
+<P><b>In:</b> True if you wish to use software temperature compensation, False otherwise.  If software temperature compensation is not available with the loaded calibration, setting this argument to True will not affect the force and torque values, but it will include the thermistor channel in all scans of the hardware,  lowering the maximum sample rate.</P>
+
+<H4 class="dtH4">bufferSize</h4>
+<P><b>In:</b> The number of output samples you wish to hold in the buffer. </P>
+
+<H2>Returns</H2>
+
+<p>0 if successful, -1 otherwise.</p>
+
+<P class="fineprint"></P>
+
+<H4 class="dtH4">See Also</H4>
+
+<P><A HREF="ReadBufferedFTRecords.htm">ReadBufferedFTRecords</A></P>
+</div>
+
+</BODY>
+</HTML>
+

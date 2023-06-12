@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<LINK REL="stylesheet" HREF="vs70_5.css">
+<LINK HREF="seealso.gif">
+<HTML DIR="LTR"><HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>ATI DAQ FT .NET Demo: Getting Started</TITLE>
+<SCRIPT SRC="vs70link.js"></SCRIPT>
+<SCRIPT SRC="vs70.js"></SCRIPT>
+</HEAD>
+<body topmargin="0" id="bodyID" class = "dtBODY">
+<object id="obj_cook" classid="clsid:59CC0C20-679B-11D2-88BD-0800361A1803" style="display:none;"></object>
+
+<div id="nsbanner">
+<div id="bannerrow1">
+<TABLE CLASS="bannerparthead" CELLSPACING=0>
+<TR ID="hdr">
+<TD CLASS="runninghead" nowrap>ATI&nbsp;Industrial&nbsp;Automation&nbsp;&nbsp;&nbsp;ATI DAQ FT .NET Demo</TD>
+<TD CLASS="product" nowrap>&nbsp;</TD>
+</TR>
+</TABLE>
+</div>
+</div>
+<DIV id="nstext" valign="bottom">
+<br>
+<font size="1"><i><a href="http://www.ati-ia.com/">Visit our website.</a></i></font>
+<br>
+<br>
+
+<H1 class="dtH1"><A NAME="ATIDAQFT .NET Demo: Getting Started"></A>Getting Started</H1>
+
+<P>The first time you run the ATI DAQ F/T .NET Demo, most of the menu options will be disabled, and the realtime display will show uncalibrated voltages.  In order to view forces and torques, you must load the calibration file for your transducer.</P>
+
+<P>To load the calibration file, click on File > Load Calibration, or right click anywhere on the main screen and select "Load Calibration File" from the pop-up menu.  Pick the calibration file (*.cal file) for your F/T system.  The name of the file is the serial number of the transducer followed by the extension ".cal".  If the calibration file is on the CD, it is recommended that you copy it to the hard drive first, so the demo can find it again on subsequent executions.</P>
+
+<P>The display will change to actual forces and torques, and the rest of the menu options will now be available.  With the transducer in an unloaded state, click the Bias button to set a baseline reading.  Apply a load, then observe forces and torques in the realtime display.</P>
+
+<P>If desired, use the Options > F/T Sensor Options menu item to change output units, tool transforms, and other settings.  The calibration file and output units are saved between executions of the demo program.</P>
+
+<P>The Options > DAQ Device Options menu item allows you to set the DAQ hardware configuration information, including the sample rate and averaging filter level.  Note that the effective sample rate is the hardware sample rate divided by the averaging level, because the averaging filter is not a "sliding" average, but a "block" average.</p>
+
+<H4 class="dtH4">Calibrations</H4>
+<P>Every ATI DAQ F/T system has a calibration file containing the information required to convert raw voltages measured by a DAQ system into forces and torques.  This file also specifies default output units, date of calibration, and other information about your transducer.</P>
+
+
+<P class="fineprint"></P>
+
+<H4 class="dtH4">See Also</H4>
+
+<P><A HREF="Demo Introduction.htm">Introduction to ATI DAQ F/T .NET Demo</A> | <A HREF="Demo Main Screen.htm">Main Screen</A></P>
+</div>
+
+</BODY>
+</HTML>

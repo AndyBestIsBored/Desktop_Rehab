@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="ImageType" value="Folder">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ATIDAQFT .NET Demo">
+		<param name="Local" value="html\Demo Introduction.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Getting Started">
+			<param name="Local" value="html\Demo Getting Started.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Main Screen">
+			<param name="Local" value="html\Demo Main Screen.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="F/T Sensor Options Screen">
+			<param name="Local" value="html\FT Sensor Options Screen.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="DAQ Device Options Screen">
+			<param name="Local" value="html\DAQ Device Options Screen.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Data Collection Screen">
+			<param name="Local" value="html\Data Collection Screen.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Calibration Info Screen">
+			<param name="Local" value="html\Calibration Info Screen.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ATICombinedDAQFT Class Library">
+		<param name="Local" value="html\ATICombinedDAQFT Introduction.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Getting Started With ATICombinedDAQFT">
+			<param name="Local" value="html\ATICombinedDAQFT Getting Started.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="FTSystem Functions">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="BiasCurrentLoad">
+				<param name="Local" value="html\BiasCurrentLoad.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="BiasKnownLoad">
+				<param name="Local" value="html\BiasKnownLoad.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GetAveragingSize">
+				<param name="Local" value="html\GetAveragingSize.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GetBiasSlope">
+				<param name="Local" value="html\GetBiasSlope.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GetBiasVector">
+				<param name="Local" value="html\GetBiasVector.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GetBodyStyle">
+				<param name="Local" value="html\GetBodyStyle.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GetCalibrationDate">
+				<param name="Local" value="html\GetCalibrationDate.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GetCalibrationType">
+				<param name="Local" value="html\GetCalibrationType.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GetConnectionMode">
+				<param name="Local" value="html\GetConnectionMode.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GetDeviceName">
+				<param name="Local" value="html\GetDeviceName.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GetErrorInfo">
+				<param name="Local" value="html\GetErrorInfo.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GetFirstChannel">
+				<param name="Local" value="html\GetFirstChannel.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GetForceUnits">
+				<param name="Local" value="html\GetForceUnits.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GetGainSlope">
+				<param name="Local" value="html\GetGainSlope.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GetMaxLoad">
+				<param name="Local" value="html\GetMaxLoad.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GetMaxVoltage">
+				<param name="Local" value="html\GetMaxVoltage.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GetMinVoltage">
+				<param name="Local" value="html\GetMinVoltage.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GetSampleFrequency">
+				<param name="Local" value="html\GetSampleFrequency.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GetSerialNumber">
+				<param name="Local" value="html\GetSerialNumber.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GetTempCompAvailable">
+				<param name="Local" value="html\GetTempCompAvailable.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GetTempCompEnabled">
+				<param name="Local" value="html\GetTempCompEnabled.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GetThermistorValue">
+				<param name="Local" value="html\GetThermistorValue.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GetTorqueUnits">
+				<param name="Local" value="html\GetTorqueUnits.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GetTransformAngleUnits">
+				<param name="Local" value="html\GetTransformAngleUnits.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GetTransformDistanceUnits">
+				<param name="Local" value="html\GetTransformDistanceUnits.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GetTransformVector">
+				<param name="Local" value="html\GetTransformVector.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="GetWorkingMatrix">
+				<param name="Local" value="html\GetWorkingMatrix.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="LoadCalibrationFile">
+				<param name="Local" value="html\LoadCalibrationFile.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ReadBufferedFTRecords">
+				<param name="Local" value="html\ReadBufferedFTRecords.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ReadSingleFTRecord">
+				<param name="Local" value="html\ReadSingleFTRecord.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ReadSingleGaugePoint">
+				<param name="Local" value="html\ReadSingleGaugePoint.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SetConnectionMode">
+				<param name="Local" value="html\SetConnectionMode.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SetForceUnits">
+				<param name="Local" value="html\SetForceUnits.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="SetTorqueUnits">
+				<param name="Local" value="html\SetTorqueUnits.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="StartBufferedAcquisition">
+				<param name="Local" value="html\StartBufferedAcquisition.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="StartSingleSampleAcquisition">
+				<param name="Local" value="html\StartSingleSampleAcquisition.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="StopAcquisition">
+				<param name="Local" value="html\StopAcquisition.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="ToolTransform">
+				<param name="Local" value="html\ToolTransform.htm">
+				</OBJECT>
+		</UL>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Advanced Techniques">
+		<param name="Local" value="html\ATICombinedDAQFT Advanced Techniques.htm">
+		</OBJECT>
+</UL>
+</BODY></HTML>

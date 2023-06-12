@@ -1,0 +1,76 @@
+PROJECT NOTES FOR ATICOMBINEDDAQFT .NET ASSEMBLY
+Sam Skuce
+ATI Industrial Automation
+
+This ATICombinedDAQFT .NET assembly uses the ATI DAQ F/T C library and a hardware interface component to create
+a single interface through which Force and Torque readings can be collected from the ATI DAQ F/T system.  
+
+------------------------------------------------------------------------------------------------------
+Assumptions
+
+-The transducer is attached to six or seven sequential channels on one DAQ device, which gauge 0 connected to the
+lowest numbered channel, gauge 1 connected to the next-lowest numbered channel, etc...  If the thermistor is used,
+it is connected to the next-highest numbered channel after gauge 5.
+
+
+------------------------------------------------------------------------------------------------------
+Hardware Interface Class - ATIDAQHardwareInterface
+Declaration - ATIDAQHardwareInterface.h
+Implementation - ATIDAQHardwareInterface.cpp
+
+As shipped from ATI the hardware interface component works only with National Instruments' NI-DAQmx devices.  To
+work with other types of data acquisition hardware, the ATIDAQHardwareInterface software class will have to be modified.
+
+
+------------------------------------------------------------------------------------------------------
+ATI DAQ F/T C Library 
+Function Declarations:
+	xmltok_impl.h
+	ascii.h
+	asciitab.h
+	dom.h
+	ftconfig.h
+	ftrt.h
+	iasciitab.h
+	latin1tab.h
+	nametab.h
+	stack.h
+	utf8tab.h
+	xmldef.h
+	xmlparse.h
+	xmlrole.h
+	xmltok.h
+Function Implementations:
+	dom.c
+	events.c*
+	expatls.c
+	ftconfig.c
+	ftrt.c
+	node.c
+	stack.c
+	xmlparse.c
+	xmlrole.c
+	xmltok.c
+	xmltok_impl.c*
+	xmltok_ns.c*
+	* - file not included in project build (see below)
+	
+The ATI DAQ F/T C Library is a collection of routines for loading in calibration information from a .cal file, applying
+output options, such as output units (Pounds vs. Newtons, etc.), tool transformations (to measure the forces and
+torques acting at a point other than the transducer origin), and performing the matrix multiplications to transform
+strain gauge voltages into force and torque data.
+
+Note that the files which comprise the C library do not have the same compilation options as 'normal' C or C++ files in
+a Visual Studio.Net project.  For one, they do not use precompiled headers (in Visual Studio.Net, right-click the file
+in the Solution Explorer window, select "Properties", and visit the "C/C++"->"Precompiled Headers" section).  For 
+another, the files events.c, xmltok_impl.c, and xmltok_ns.c are not included in the build at all, but they must be
+in the same directory as the other files in the C library, because they are #included into other files.  To exclude
+a project from the build in VS.NET, right click the file in solution explorer, select the "General Section" and set the
+"Excluded from build" property.  Also, if certain functions are called from managed c++ code, they will generate linker
+error 1235 in Visual C++ 2003.  To avoid this, set the "Compile as Managed" property of the file in which the function
+is defined to "Not Using Managed Extensions".  To compile this particular project, ftconfig.c has to be configured in
+this way.
+	
+	
+
+

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<LINK REL="stylesheet" HREF="vs70_5.css">
+<LINK HREF="seealso.gif">
+<HTML DIR="LTR"><HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>LoadCalibrationFile</TITLE>
+<SCRIPT SRC="vs70link.js"></SCRIPT>
+<SCRIPT SRC="vs70.js"></SCRIPT>
+</HEAD>
+<body topmargin="0" id="bodyID" class = "dtBODY">
+<object id="obj_cook" classid="clsid:59CC0C20-679B-11D2-88BD-0800361A1803" style="display:none;"></object>
+
+<div id="nsbanner">
+<div id="bannerrow1">
+<TABLE CLASS="bannerparthead" CELLSPACING=0>
+<TR ID="hdr">
+<TD CLASS="runninghead" nowrap>ATI&nbsp;Industrial&nbsp;Automation&nbsp;&nbsp;&nbsp;ATICombinedDAQFT .NET Class Library</TD>
+<TD CLASS="product" nowrap>&nbsp;</TD>
+</TR>
+</TABLE>
+</div>
+</div>
+<DIV id="nstext" valign="bottom">
+<br>
+<font size="1"><i><a href="http://www.ati-ia.com/">Visit our website.</a></i></font>
+<br>
+<br>
+
+<H1 class="dtH1"><A NAME="LoadCalibrationFile"></A>LoadCalibrationFile( calFile as String, calibrationIndex as Integer ) as Integer</H1>
+
+<P>Loads an F/T transducer calibration file.</P>
+
+<H2 >Arguments</H2>
+
+<H4 class="dtH4">calFile</h4>
+<P><b>In:</b> Path to the calibration (*.cal) file for the transducer you are using.  Calibration files are named like 'FTxxxx.cal', where 'xxxx' is the serial number printed on your transducer or it's power-supply box.</P>
+
+<H4 class="dtH4">calibrationIndex</h4>
+<P><b>In:</b> The calibration within the file to use.  Should be 1 if there is only one
+				calibration in the file (Most .cal files have only one calibration in them).</P>
+
+<H2>Returns</H2>
+
+<p>0 if successful, nonzero if not successful.</p>
+
+<H2>Side Effects</H2>
+<p>Resets the output units to whatever the calibration file specifies. If the hardware acquisition task is 
+			currently running, make sure to restart it (i.e. via <a href="StartSingleSampleAcquisition.htm">StartSingleSampleAcquisition</a>) before attempting to
+			read f/t values.  Otherwise, the temperature compensation, voltage range, etc. may not be correct for 
+			the system you are using.</p>
+
+<P class="fineprint"></P>
+
+<H4 class="dtH4">See Also</H4>
+
+<P><A HREF="StartSingleSampleAcquisition.htm">StartSingleSampleAcquisition</A></P>
+</div>
+
+</BODY>
+</HTML>
+

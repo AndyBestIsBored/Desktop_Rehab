@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<LINK REL="stylesheet" HREF="vs70_5.css">
+<LINK HREF="seealso.gif">
+<HTML DIR="LTR"><HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+
+<TITLE>GetCalibrationType</TITLE>
+
+<SCRIPT SRC="vs70link.js"></SCRIPT>
+<SCRIPT SRC="vs70.js"></SCRIPT>
+</HEAD>
+<body topmargin="0" id="bodyID" class = "dtBODY">
+<object id="obj_cook" classid="clsid:59CC0C20-679B-11D2-88BD-0800361A1803" style="display:none;"></object>
+
+<div id="nsbanner">
+<div id="bannerrow1">
+<TABLE CLASS="bannerparthead" CELLSPACING=0>
+<TR ID="hdr">
+<TD CLASS="runninghead" nowrap>ATI&nbsp;Industrial&nbsp;Automation&nbsp;&nbsp;&nbsp;ATICombinedDAQFT .NET Class Library</TD>
+<TD CLASS="product" nowrap>&nbsp;</TD>
+</TR>
+</TABLE>
+</div>
+</div>
+<DIV id="nstext" valign="bottom">
+<br>
+<font size="1"><i><a href="http://www.ati-ia.com/">Visit our website.</a></i></font>
+<br>
+<br>
+
+<H1 class="dtH1"><A NAME="GetCalibrationType"></A>GetCalibrationType() As String</H1>
+
+<P>Get the calibration of the transducer.</P>
+
+
+<H2>Returns</H2>
+
+<p>The transducer's calibration, i.e. 'US-600-3600' or 'SI-10-100', or "" if no 
+			calibration was loaded using the function <a href="LoadCalibrationFile.htm
+">LoadCalibrationFile</a>.  The first 
+			section is "US" or "SI", indicating whether this calibration uses metric (SI)
+			or imperial (US) units.  The first number is the force rating for this calibration,
+			which is in Newtons if this is a metric calibration, or pounds if this is an 
+			imperial calibration.  The second number is the torque rating for this calibration,
+			which is in	Newton-meters if this is a metric calibration, or Pound-feet if 
+			this is an imperial	calibration.</p>
+
+<P class="fineprint"></P>
+
+<H4 class="dtH4">See Also</H4>
+
+<P>
+<a href="LoadCalibrationFile.htm
+">LoadCalibrationFile</a>
+</P>
+</div>
+
+</BODY>
+</HTML>
+

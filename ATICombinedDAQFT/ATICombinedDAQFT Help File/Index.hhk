@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Averaging">
+		<param name="Name" value="GetAveragingSize">
+		<param name="Local" value="html\GetAveragingSize.htm">
+		<param name="Name" value="StartBufferedAcquisition">
+		<param name="Local" value="html\StartBufferedAcquisition.htm">
+		<param name="Name" value="StartSingleSampleAcquisition">
+		<param name="Local" value="html\StartSingleSampleAcquisition.htm">
+		<param name="Name" value="DAQ Device Options Screen">
+		<param name="Local" value="html\DAQ Device Options Screen.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Bias">
+		<param name="Name" value="BiasCurrentLoad">
+		<param name="Local" value="html\BiasCurrentLoad.htm">
+		<param name="Name" value="BiasKnownLoad">
+		<param name="Local" value="html\BiasKnownLoad.htm">
+		<param name="Name" value="GetBiasVector">
+		<param name="Local" value="html\GetBiasVector.htm">
+		<param name="Name" value="ATIDAQFT Demo: Main Screen">
+		<param name="Local" value="html\Demo Main Screen.htm">
+		<param name="Name" value="ATIDAQFT Demo: F/T Sensor Options Screen">
+		<param name="Local" value="html\FT Sensor Options Screen.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Calibration">
+		<param name="Name" value="Calibration Info Screen">
+		<param name="Local" value="html\Calibration Info Screen.htm">
+		<param name="Name" value="GetCalibrationDate">
+		<param name="Local" value="html\GetCalibrationDate.htm">
+		<param name="Name" value="GetCalibrationType">
+		<param name="Local" value="html\GetCalibrationType.htm">
+		<param name="Name" value="GetWorkingMatrix">
+		<param name="Local" value="html\GetWorkingMatrix.htm">
+		<param name="Name" value="LoadCalibrationFile">
+		<param name="Local" value="html\LoadCalibrationFile.htm">
+		<param name="Name" value="Calibration Info Screen">
+		<param name="Local" value="html\Calibration Info Screen.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Matrix">
+			<param name="Name" value="GetWorkingMatrix">
+			<param name="Local" value="html\GetWorkingMatrix.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="DAQ Device">
+		<param name="Name" value="GetDeviceName">
+		<param name="Local" value="html\GetDeviceName.htm">
+		<param name="Name" value="StartBufferedAcquisition">
+		<param name="Local" value="html\StartBufferedAcquisition.htm">
+		<param name="Name" value="StartSingleSampleAcquisition">
+		<param name="Local" value="html\StartSingleSampleAcquisition.htm">
+		<param name="Name" value="DAQ Device Options Screen">
+		<param name="Local" value="html\DAQ Device Options Screen.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Connection Mode">
+		<param name="Name" value="GetConnectionMode">
+		<param name="Local" value="html\GetConnectionMode.htm">
+		<param name="Name" value="SetConnectionMode">
+		<param name="Local" value="html\SetConnectionMode.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Data Collection">
+		<param name="Name" value="Data Collection Screen">
+		<param name="Local" value="html\Data Collection Screen.htm">
+		<param name="Name" value="ReadSingleFTRecord">
+		<param name="Local" value="html\ReadSingleFTRecord.htm">
+		<param name="Name" value="StartBufferedAcquisition">
+		<param name="Local" value="html\StartBufferedAcquisition.htm">
+		<param name="Name" value="ReadBufferedFTRecords">
+		<param name="Local" value="html\ReadBufferedFTRecords.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Error">
+		<param name="Name" value="GetErrorInfo">
+		<param name="Local" value="html\GetErrorInfo.htm">
+		<param name="Name" value="ATIDAQFT Demo: Main Screen">
+		<param name="Local" value="html\Demo Main Screen.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Filter, see Averaging">
+		<param name="See Also" value="Averaging">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Force">
+		<param name="Name" value="ReadSingleFTRecord">
+		<param name="Local" value="html\ReadSingleFTRecord.htm">
+		<param name="Name" value="ReadBufferedFTRecords">
+		<param name="Local" value="html\ReadBufferedFTRecords.htm">
+		<param name="Name" value="GetForceUnits">
+		<param name="Local" value="html\GetForceUnits.htm">
+		<param name="Name" value="SetForceUnits">
+		<param name="Local" value="html\SetForceUnits.htm">
+		<param name="Name" value="ATIDAQFT Demo: F/T Sensor Options Screen">
+		<param name="Local" value="html\FT Sensor Options Screen.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="High-Speed Data">
+		<param name="Name" value="StartBufferedAcquisition">
+		<param name="Local" value="html\StartBufferedAcquisition.htm">
+		<param name="Name" value="ReadBufferedFTRecords">
+		<param name="Local" value="html\ReadBufferedFTRecords.htm">
+		<param name="Name" value="Data Collection Screen">
+		<param name="Local" value="html\Data Collection Screen.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Manual Calculations">
+		<param name="Name" value="Advanced Techniques">
+		<param name="Local" value="html\ATICombinedDAQFT Advanced Techniques.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Maximum Load">
+		<param name="Name" value="GetMaxLoad">
+		<param name="Local" value="html\GetMaxLoad.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Noise Reduction, see Averaging">
+		<param name="See Also" value="Averaging">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Rated Load">
+		<param name="See Also" value="Maximum Load">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Sample Frequency">
+		<param name="Name" value="GetSampleFrequency">
+		<param name="Local" value="html\GetSampleFrequency.htm">
+		<param name="Name" value="StartBufferedAcquisition">
+		<param name="Local" value="html\StartBufferedAcquisition.htm">
+		<param name="Name" value="StartSingleSampleAcquisition">
+		<param name="Local" value="html\StartSingleSampleAcquisition.htm">
+		<param name="Name" value="DAQ Device Options Screen">
+		<param name="Local" value="html\DAQ Device Options Screen.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Tare, see Bias">
+		<param name="See Also" value="Bias">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Temperature Compensation">
+		<param name="Name" value="Advanced Techniques">
+		<param name="Local" value="html\ATICombinedDAQFT Advanced Techniques.htm">
+		<param name="Name" value="GetThermistorValue">
+		<param name="Local" value="html\GetThermistorValue.htm">
+		<param name="Name" value="GetGainSlope">
+		<param name="Local" value="html\GetGainSlope.htm">
+		<param name="Name" value="GetBiasSlope">
+		<param name="Local" value="html\GetBiasSlope.htm">
+		<param name="Name" value="GetTempCompAvailable">
+		<param name="Local" value="html\GetTempCompAvailable.htm">
+		<param name="Name" value="GetTempCompEnabled">
+		<param name="Local" value="html\GetTempCompEnabled.htm">
+		<param name="Name" value="StartBufferedAcquisition">
+		<param name="Local" value="html\StartBufferedAcquisition.htm">
+		<param name="Name" value="StartSingleSampleAcquisition">
+		<param name="Local" value="html\StartSingleSampleAcquisition.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Tool Transform">
+		<param name="Name" value="ToolTransform">
+		<param name="Local" value="html\ToolTransform.htm">
+		<param name="Name" value="GetTransformVector">
+		<param name="Local" value="html\GetTransformVector.htm">
+		<param name="Name" value="GetTransformAngleUnits">
+		<param name="Local" value="html\GetTransformAngleUnits.htm">
+		<param name="Name" value="GetTransformDistanceUnits">
+		<param name="Local" value="html\GetTransformDistanceUnits.htm">
+		<param name="Name" value="ATIDAQFT Demo: F/T Sensor Options Screen">
+		<param name="Local" value="html\FT Sensor Options Screen.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Torque">
+		<param name="Name" value="ReadSingleFTRecord">
+		<param name="Local" value="html\ReadSingleFTRecord.htm">
+		<param name="Name" value="ReadBufferedFTRecords">
+		<param name="Local" value="html\ReadBufferedFTRecords.htm">
+		<param name="Name" value="GetTorqueUnits">
+		<param name="Local" value="html\GetTorqueUnits.htm">
+		<param name="Name" value="SetTorqueUnits">
+		<param name="Local" value="html\SetTorqueUnits.htm">
+		<param name="Name" value="ATIDAQFT Demo: F/T Sensor Options Screen">
+		<param name="Local" value="html\FT Sensor Options Screen.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Units">
+		<param name="Name" value="SetForceUnits">
+		<param name="Local" value="html\SetForceUnits.htm">
+		<param name="Name" value="SetTorqueUnits">
+		<param name="Local" value="html\SetTorqueUnits.htm">
+		<param name="Name" value="GetForceUnits">
+		<param name="Local" value="html\GetForceUnits.htm">
+		<param name="Name" value="GetTorqueUnits">
+		<param name="Local" value="html\GetTorqueUnits.htm">
+		<param name="Name" value="ATIDAQFT Demo: F/T Sensor Options Screen">
+		<param name="Local" value="html\FT Sensor Options Screen.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Voltage">
+		<param name="Name" value="StartBufferedAcquisition">
+		<param name="Local" value="html\StartBufferedAcquisition.htm">
+		<param name="Name" value="StartSingleSampleAcquisition">
+		<param name="Local" value="html\StartSingleSampleAcquisition.htm">
+		<param name="Name" value="ReadSingleGaugePoint">
+		<param name="Local" value="html\ReadSingleGaugePoint.htm">
+		</OBJECT>
+</UL>
+</BODY></HTML>

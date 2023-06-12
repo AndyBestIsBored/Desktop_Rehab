@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<LINK REL="stylesheet" HREF="vs70_5.css">
+<LINK HREF="seealso.gif">
+<HTML DIR="LTR"><HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>ATI DAQ FT .NET Demo: Calibration Info Screen</TITLE>
+<SCRIPT SRC="vs70link.js"></SCRIPT>
+<SCRIPT SRC="vs70.js"></SCRIPT>
+</HEAD>
+<body topmargin="0" id="bodyID" class = "dtBODY">
+<object id="obj_cook" classid="clsid:59CC0C20-679B-11D2-88BD-0800361A1803" style="display:none;"></object>
+
+<div id="nsbanner">
+<div id="bannerrow1">
+<TABLE CLASS="bannerparthead" CELLSPACING=0>
+<TR ID="hdr">
+<TD CLASS="runninghead" nowrap>ATI&nbsp;Industrial&nbsp;Automation&nbsp;&nbsp;&nbsp;ATI DAQ FT .NET Demo</TD>
+<TD CLASS="product" nowrap>&nbsp;</TD>
+</TR>
+</TABLE>
+</div>
+</div>
+<DIV id="nstext" valign="bottom">
+<br>
+<font size="1"><i><a href="http://www.ati-ia.com/">Visit our website.</a></i></font>
+<br>
+<br>
+
+<H1 class="dtH1"><A NAME="Calibration Info Screen"></A>Calibration Info Screen</H1>
+
+<P>This screen displays information about the loaded calibration.</P>
+
+<H4 class="dtH4">Serial Number</H4>
+<P>The serial number of the F/T sensor.</P>
+
+<H4 class="dtH4">Calibration Date</H4>
+<P>The date the F/T sensor was last calibrated</P>
+
+<H4 class="dtH4">Calibration Type</H4>
+<P>The unit system and sensing range of the F/T sensor.</P>
+
+<H4 class="dtH4">Body Style</H4>
+<P>The type of transducer, i.e. Nano17, Gamma, Delta, etc.</P>
+
+<H4 class="dtH4">Software Temperature Compensation</H4>
+<P>Whether or not this calibration can use software temperature compensation.  Newer F/T systems use hardware temperature compensation, which is transparent to the software.</P>
+
+<H4 class="dtH4">Thermistor Value at Calibration</H4>
+<p>If software temperature compensation is available, this field displays the thermistor value at calibration, which is used to perform the software temperature compensation.
+</p>
+
+<H4 class="dtH4">Bias Slopes</H4>
+<p>If software temperature compensation is available, this field displays the bias slopes of the individual gauges.  The bias slope values are used in the software temperature compensation algorithm.
+</p>
+
+<H4 class="dtH4">Gain Slopes</H4>
+<p>If software temperature compensation is available, this field displays the gain slopes of the individual gauges.  The gain slope values are used in the software temperature compensation algorithm.
+</p>
+
+<H4 class="dtH4">Hardware Temperature Compensation</H4>
+<p>Whether or not hardware temperature compensation is installed in this transducer.  Hardware temperature compensation requires no calculation by the software.
+</p>
+
+
+<H4 class="dtH4">Calibration Matrix</H4>
+<P>The working calibration matrix for the sensor.  If you need to calculate the force and torque values in your own custom application, you will need this matrix.  To calculate the F/T values from the strain gauge voltages, multiply the voltage vector by this calibration matrix.  The working matrix is affected by your choice of output units and any tool transformations you created on the <a href="FT Sensor Options Screen.htm">F/T Sensor Options Screen</a>.</P>
+
+<P class="fineprint"></P>
+
+<H4 class="dtH4">See Also</H4>
+
+<P><A HREF="FT Sensor Options Screen.htm">F/T Sensor Options Screen</A></P>
+</div>
+
+</BODY>
+</HTML>
+

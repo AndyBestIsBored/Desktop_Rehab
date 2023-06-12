@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<LINK REL="stylesheet" HREF="vs70_5.css">
+<LINK HREF="seealso.gif">
+<HTML DIR="LTR"><HEAD>
+<META HTTP-EQUIV="Content-Type" Content="text/html; charset=Windows-1252">
+<TITLE>ATI DAQ FT .NET Demo: F/T Sensor Options Screen</TITLE>
+<SCRIPT SRC="vs70link.js"></SCRIPT>
+<SCRIPT SRC="vs70.js"></SCRIPT>
+</HEAD>
+<body topmargin="0" id="bodyID" class = "dtBODY">
+<object id="obj_cook" classid="clsid:59CC0C20-679B-11D2-88BD-0800361A1803" style="display:none;"></object>
+
+<div id="nsbanner">
+<div id="bannerrow1">
+<TABLE CLASS="bannerparthead" CELLSPACING=0>
+<TR ID="hdr">
+<TD CLASS="runninghead" nowrap>ATI&nbsp;Industrial&nbsp;Automation&nbsp;&nbsp;&nbsp;ATI DAQ FT .NET Demo</TD>
+<TD CLASS="product" nowrap>&nbsp;</TD>
+</TR>
+</TABLE>
+</div>
+</div>
+<DIV id="nstext" valign="bottom">
+<br>
+<font size="1"><i><a href="http://www.ati-ia.com/">Visit our website.</a></i></font>
+<br>
+<br>
+
+<H1 class="dtH1"><A NAME="ATIDAQFT .NET Demo: F/T Sensor Options Screen"></A>F/T Sensor Options Screen</H1>
+
+<P>The F/T Sensor Options screen provides you with the ability to change the output units of the F/T system, enable or disable software temperature compensation (when available), create tool transformations, and manually set the bias voltages.</P>
+
+<H2>Output Options Tab</H2>
+
+<H4 class="dtH4">Force Units</H4>
+<P>This listbox allows you to select the force units that the F/T sensor system outputs.  Available choices are pounds (lbf), kilopounds (klbf), newtons (N), kilonewtons (kN), gram-equivalent force (g), and kilogram-equivalent force (kg).</P>
+
+<H4 class="dtH4">Torque Units</H4>
+<P>This listbox allows you to select the torque units that the F/T sensor system outputs.  Available choices are inch-pounds (lbf-in), feet-pounds(lbf-ft), newton-meters (N-m), newton-millimeters (N-mm), and kilogram-centimeters (kg-cm).</P>
+
+<H4 class="dtH4">Software Temperature Compensation</H4>
+<P>This checkbox allows you to enable (checked) or disable (unchecked) software temperature compensation, which uses the value of the thermistor to modify the strain gauge values before performing the matrix multiplication to calculate the force/torque values.  This checkbox is only available if the loaded calibration supports software temperature compensation.  Newer transducers have hardware temperature compensation, which eliminates the need for performing the calculations involved in software temperature compensation, and is completely transparent to the user of the F/T system.</P>
+
+<H2>Tool Transform Tab</H2>
+
+<p>Tool Transformations are used to measure the forces and torques acting at a point other than the origin of the transducer.</p>
+
+<H4 class="dtH4">Displacements</H4>
+<P>The displacements are the distances from the origin of the transducer to the point at which you wish to measure the forces and torques.  You can select the distance units of the displacements in the combo box at the top of the tab.  Available distance units are inches, feet, meters, centimeters, and millimeters.</P>
+
+<H4 class="dtH4">Rotations</H4>
+<P>You can rotate the coordinate system around all three axes using these fields.  Rotations are applied first around the X axis, then around the Y axis, then around the Z axis.  Rotations can be measured in degrees or radians, which you can select from the combo box at the top of the tab.</P>
+
+<H4 class="dtH4">Clear Button</H4>
+<P>This button clears all displacements and rotations to 0, restoring the default measurement orientation and origin.</P>
+
+<H2>Bias Tab</H2>
+
+<H4 class="dtH4">Voltage 0 through 5</H4>
+<P>These are the raw strain gauge voltages when the F/T system is only loaded with the constant tooling or some other load whose effect you wish to ignore in your readings.</P>
+
+<H4 class="dtH4">Clear Button</H4>
+<P>This button clears all the bias voltages to 0.</P>
+
+</div>
+</div>
+
+</BODY>
+</HTML>
+

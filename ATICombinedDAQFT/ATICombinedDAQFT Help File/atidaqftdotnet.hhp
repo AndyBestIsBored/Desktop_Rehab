@@ -1,0 +1,68 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=atidaqftdotnet.chm
+Contents file=atidaqftdotnet.hhc
+Default Window=Normal
+Default topic=html\Demo Introduction.htm
+Display compile progress=Yes
+Full-text search=Yes
+Index file=Index.hhk
+Language=0x409 English (United States)
+Title=ATI DAQ F/T .NET Software
+
+[WINDOWS]
+Normal=,"atidaqftdotnet.hhc","Index.hhk","html\Demo Introduction.htm",,,,,,0x2520,,0x3006,,,,,,,,0
+
+
+[FILES]
+html\Demo Getting Started.htm
+html\Demo Introduction.htm
+html\Demo Main Screen.htm
+html\FT Sensor Options Screen.htm
+html\DAQ Device Options Screen.htm
+html\Data Collection Screen.htm
+html\Calibration Info Screen.htm
+html\ATICombinedDAQFT Introduction.htm
+html\ReadSingleGaugePoint.htm
+html\StartSingleSampleAcquisition.htm
+html\StartBufferedAcquisition.htm
+html\StopAcquisition.htm
+html\GetErrorInfo.htm
+html\GetDeviceName.htm
+html\GetSampleFrequency.htm
+html\GetAveragingSize.htm
+html\GetFirstChannel.htm
+html\LoadCalibrationFile.htm
+html\GetSerialNumber.htm
+html\GetCalibrationDate.htm
+html\GetMaxLoad.htm
+html\SetForceUnits.htm
+html\GetForceUnits.htm
+html\SetTorqueUnits.htm
+html\GetTorqueUnits.htm
+html\GetTempCompAvailable.htm
+html\ToolTransform.htm
+html\GetTransformVector.htm
+html\GetTransformDistanceUnits.htm
+html\GetTransformAngleUnits.htm
+html\GetBodyStyle.htm
+html\GetCalibrationType.htm
+html\GetWorkingMatrix.htm
+html\ReadSingleFTRecord.htm
+html\ReadBufferedFTRecords.htm
+html\BiasKnownLoad.htm
+html\BiasCurrentLoad.htm
+html\GetMaxVoltage.htm
+html\GetMinVoltage.htm
+html\GetBiasVector.htm
+html\GetTempCompEnabled.htm
+html\ATICombinedDAQFT Getting Started.htm
+html\ATICombinedDAQFT Advanced Techniques.htm
+html\GetThermistorValue.htm
+html\GetBiasSlope.htm
+html\GetGainSlope.htm
+html\GetConnectionMode.htm
+html\SetConnectionMode.htm
+
+[INFOTYPES]
+
