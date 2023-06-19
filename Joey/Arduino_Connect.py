@@ -27,9 +27,9 @@ def unpack(data):
     tor = ((data[3]*(T_MAX-T_MIN))/(pow(2,12)-1)) + T_MIN
     return id, pos, vel, tor
 
-def receive():
+def Motor_receive():
     # Read the response from the serial port
-    received = ser.readline().decode().split()      
+    received = Motor_ser.readline().decode().split()      
 
     # Print the received bytes
     # print("Received:", received)
@@ -40,10 +40,12 @@ def receive():
         [id, p, v, t] = unpack(response)
 
         # print the response from the Arduino
-        print([id, p, v, t])
+        if len([id, p, v, t]) != 0:
+            print([id, p, v, t])
 
     except (IndexError, ValueError):
-        print(received)
+        # print(received)
+        pass
     return
 
 def pack_cmd(p_des, v_des, t_ff, kp, kd):
@@ -72,21 +74,22 @@ def pack_cmd(p_des, v_des, t_ff, kp, kd):
 
 
 if __name__ == "__main__":
-    # open the serial port
-    ser = serial.Serial('/dev/cu.usbserial-14110', 115200, timeout=1)
+    # open the Motor_serial port
+    Motor_ser = serial.Serial('/dev/ttyUSB0', 115200, timeout=1)
     print("Begin")
     start_zero = dt.datetime.today().timestamp()
     t0 = 0
     count = 0
 
+    print("setting zero to both motor")
     while t0 < 3:
         #M1
-        ser.write(bytes([0x01])+ZERO)
-        receive()
+        Motor_ser.write(bytes([0x01])+ZERO)
+        Motor_receive()
 
         #M2
-        ser.write(bytes([0x02])+ZERO)
-        receive()
+        Motor_ser.write(bytes([0x02])+ZERO)
+        Motor_receive()
 
         t0 = dt.datetime.today().timestamp() - start_zero
     
@@ -95,12 +98,12 @@ if __name__ == "__main__":
     t_enter = 0
     while t_enter < 2:
         #M1
-        ser.write(bytes([0x01])+ENTER)
-        receive()
+        Motor_ser.write(bytes([0x01])+ENTER)
+        Motor_receive()
 
         #M2
-        ser.write(bytes([0x02])+ENTER)
-        receive()
+        Motor_ser.write(bytes([0x02])+ENTER)
+        Motor_receive()
 
         t_enter = dt.datetime.today().timestamp() - start_enter
 
@@ -109,26 +112,26 @@ if __name__ == "__main__":
 
     while t < 5:
 
-        command = bytes(pack_cmd(0,0,0,0,0)) #(pos,vel,torque,kp,kd)
+        command = bytes(pack_cmd(0,1,0,0,1)) #(pos,vel,torque,kp,kd)
         #M1
-        ser.write(bytes([0x01])+command)
-        receive()
+        Motor_ser.write(bytes([0x01])+command)
+        Motor_receive()
 
         #M2
-        ser.write(bytes([0x02])+command)
-        receive()
+        Motor_ser.write(bytes([0x02])+command)
+        Motor_receive()
      
 
         count+=1
         t = dt.datetime.today().timestamp() - start_time
     
-    ser.write(bytes([0x01])+EXIT)
-    receive()
+    Motor_ser.write(bytes([0x01])+EXIT)
+    Motor_receive()
 
     #M2
-    ser.write(bytes([0x02])+EXIT)
-    receive()
+    Motor_ser.write(bytes([0x02])+EXIT)
+    Motor_receive()
 
-# close the serial port
-ser.close()
+# close the Motor_serial port
+Motor_ser.close()
 print(t/count)
