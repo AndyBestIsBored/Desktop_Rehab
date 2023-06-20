@@ -1,19 +1,16 @@
-const int PUL = 8;
-const int DIR = 0;
-const int ENA = 1;
+#define PUL 3
+#define DIR 2
 
 unsigned long dT;
 float timeold;
 float t = 0;
-unsigned long step = 500;
+unsigned long eachstep = 500;
 
 void setup() {
   // put your setup code here, to run once:
   pinMode(PUL, OUTPUT);
   pinMode(DIR, OUTPUT);
-  pinMode(ENA, OUTPUT);
 
-  digitalWrite(ENA, HIGH);
   Serial.begin(115200);
   
 }
@@ -24,34 +21,36 @@ void loop() {
   t = t + (0.001f*dT);
   timeold = millis();
   
-  while (t < 20) {
+  while (t < 10) {
     dT = millis() - timeold;
     t = t + (0.001f*dT);
     timeold = millis();
     
-    while (t < 10) {
+    while (t < 5) {
       dT = millis() - timeold;
       t = t + (0.001f*dT);
       timeold = millis();
-      
+
       digitalWrite(DIR, HIGH);
       digitalWrite(PUL, HIGH);
-      delay(step);
+      delayMicroseconds(eachstep);
       digitalWrite(PUL, LOW);
-      delay(step);    
+      delayMicroseconds(eachstep);    
       Serial.println("Going");
       
     }
 
-    
       digitalWrite(DIR, LOW);
       digitalWrite(PUL, HIGH);
-      delay(step);
+      delayMicroseconds(eachstep);
       digitalWrite(PUL, LOW);
-      delay(step);
+      delayMicroseconds(eachstep);
       Serial.println("Going Back");
   }
 
-  digitalWrite(ENA, LOW);
+  Serial.println("End");
+  delay(1000);
+  t = 0;
+  timeold = millis();
 
 }
