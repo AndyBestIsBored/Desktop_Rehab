@@ -81,7 +81,7 @@ if __name__ == "__main__":
     t0 = 0
     count = 0
 
-    print("setting zero to both motor")
+    print("Setting zero to both motor")
     while t0 < 3:
         #M1
         Motor_ser.write(bytes([0x01])+ZERO)
