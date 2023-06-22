@@ -4,6 +4,16 @@ PUL = LED(26)
 DIR = LED(4)
 ENA = LED(15)
 
-ENA.on()
+step = 0.0005
+
+
+
+    
+
+ENA.off()
 DIR.on()
-PUL.blink(0.00001,0.00001,5000)
+PUL.blink(step,step,2000)
+print("M")
+
+
+
