@@ -7,10 +7,10 @@ from nidaqmx.constants import AcquisitionType
 class ftsensor:
     def __avg(lst):
         return sum(lst) / len(lst)
-    
-    def convertToFt(voltage):
-        return FTSensor().convertToFt(voltage)
 
+    def convertToFt(self, voltage):
+        return self.sensor.convertToFt(voltage)
+    
     def __init__(self, calibration_file_path="FT44764\FT44764.cal", tool_offset=[0,0,0,0,0,0]):
         self.calibration_file_path = calibration_file_path
         self.tool_offset = tool_offset
