@@ -70,11 +70,13 @@ class ftsensor:
     def set_sampling_freq(self, freq):
         self.sampling_freq = freq
         self.sample_number = self.sampling_freq//self.read_freq
+        self.raw_readings = np.zeros((self.channel_number, self.sample_number), dtype=np.float64)
         return self.sampling_freq
 
     def set_read_freq(self, freq):
-        self.set_read_freq = freq
+        self.read_freq = freq
         self.sample_number = self.sampling_freq//self.read_freq
+        self.raw_readings = np.zeros((self.channel_number, self.sample_number), dtype=np.float64)
         return self.sample_number
     
     def get_calibration_file_path(self):
