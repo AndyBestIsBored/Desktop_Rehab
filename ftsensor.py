@@ -91,7 +91,7 @@ class ftsensor:
     def get_sampling_freq(self):
         return self.sampling_freq
     
-    def read_freq(self):
+    def get_read_freq(self):
         return self.read_freq
     
     def get_sample_number(self):
