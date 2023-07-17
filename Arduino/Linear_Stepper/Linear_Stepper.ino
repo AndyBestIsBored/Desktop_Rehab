@@ -12,7 +12,7 @@ int dir = HIGH;
 
 bool on = false;
 
-const double delayTime = 0.5;
+const double power = 0.9;
 
 Button powerButton(powerButtonPin);
 
@@ -35,29 +35,27 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  if (powerButton.pressed())
+  if (powerButton.released())
   {
 		on = !on;
   }
   if (on == true)
   {
-//    Serial.println(dir);
-    digitalWrite(stepPin, HIGH);
-    delay(delayTime);
-    digitalWrite(stepPin, LOW);
-    delay(delayTime); 
+    analogWrite(stepPin, power*255);
   }
-  
+  else{
+    analogWrite(stepPin, 0);
+  }
 }
 
 void leftButtonPressed()
 {
-  dir = HIGH;
   digitalWrite(dirPin,HIGH);
+  dir = HIGH;
 }
 
 void rightButtonPressed()
 {
-  dir = LOW;
   digitalWrite(dirPin,LOW);
+  dir = LOW;
 }
