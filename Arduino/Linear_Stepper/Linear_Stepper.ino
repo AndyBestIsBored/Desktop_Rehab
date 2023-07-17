@@ -41,7 +41,7 @@ void loop() {
   }
   if (on == true)
   {
-    Serial.println(dir);
+//    Serial.println(dir);
     digitalWrite(stepPin, HIGH);
     delay(delayTime);
     digitalWrite(stepPin, LOW);

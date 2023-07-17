@@ -24,6 +24,7 @@ void setup() {
 
   while (digitalRead(rightButtonPin) != HIGH)
   {
+    Serial.println(dir);
     digitalWrite(stepPin, HIGH);
     delay(delayTime);
     digitalWrite(stepPin, LOW);
@@ -38,6 +39,7 @@ void setup() {
   
   while (digitalRead(leftButtonPin) != HIGH)
   {
+    Serial.println(dir);
     digitalWrite(stepPin, HIGH);
     delay(delayTime);
     digitalWrite(stepPin, LOW);
