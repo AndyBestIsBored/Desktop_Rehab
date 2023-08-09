@@ -1,6 +1,6 @@
 #include <Button.h>
 
-const int stepPin = 6;
+const int stepPin = 6 ;
 const int dirPin = 7;
 const int enPin = 8;
 
@@ -18,7 +18,7 @@ Button powerButton(powerButtonPin);
 
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(9600);
+  // Serial.begin(9600);
 
   pinMode(stepPin,OUTPUT); 
   pinMode(dirPin,OUTPUT);
