@@ -104,7 +104,6 @@ for i = 1:length(Fx_Stack)
     plot(X25_Y,Fx_Stack(i,:))
     plot(X25_Y,Fx_Mea_Stack(i,:))
     hold off
-    legend(["Theory","Experiment"])
     title(T(i))
     xlabel("Y [cm]")
     ylabel("Fx [N]")
@@ -118,12 +117,11 @@ for i = 1:length(Fy_Stack)
     subplot(2,3,i)
     hold on
     plot(X25_Y,Fy_Stack(i,:))
-    plot(X25_Y,Fy_Mea_Stack(i,:))
+    plot(X25_Y,Fx_Mea_Stack(i,:))
     hold off
-    legend(["Theory","Experiment"])
     title(T(i))
     xlabel("Y [cm]")
-    ylabel("Fy [N]")
+    ylabel("Fx [N]")
 end
 
 
