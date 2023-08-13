@@ -4,7 +4,8 @@ clc
 
 %% Readdata
 
-mainpath = "/Users/khemwutapornpipatsakul/Documents/VS_coding";
+% mainpath = "/Users/khemwutapornpipatsakul/Documents/VS_coding"; %MacBook
+mainpath = "D:\python\"; %Hp
 
 
 XX = string(25:3:40);
@@ -28,6 +29,17 @@ for i = XX
 end
 
 
+for k = 1:length(TT)
+    Tname = char(TT(k));
+    for l = 1:length(Tname)
+        if Tname(l) == '-'
+            Tname(l) = 'm';
+        end
+    end
+    TT_name(k) = "T" + Tname;
+end
+
+
 all_varnames = fieldnames(data);
 
 for i = 1:length(all_varnames)
@@ -35,6 +47,67 @@ for i = 1:length(all_varnames)
 end
 
 clear i j k l Tname varname filename
+
+
+
+%% Plot average Fx
+
+for i = XX
+    figure()
+    sgtitle("X" + i + " " + " Fx")
+    for j = 1:length(TT_name)
+
+        for k = 1:length(YY)
+            path = data_avg.("X" + i + "_Y" + YY(k) + "_" + TT_name(j));
+            Theory(k) = path.Fx;
+            Exp(k) = path.Fx_Mea;
+        end
+        subplot(3,2,j)
+        hold on
+        plot(str2double(YY), Theory)
+        plot(str2double(YY), Exp)
+        xlabel("Y [mm]")
+        ylabel("Fx [N]")
+        ylim([-12 12])
+        legend(["Theory", "Exp"])
+        title("T" + TT(j))
+    end
+end
+
+clear i j k path Theory Exp
+
+
+
+%% plot average Fy
+
+
+for i = XX
+    figure()
+    sgtitle("X" + i + " " + " Fy")
+    for j = 1:length(TT_name)
+
+        for k = 1:length(YY)
+            path = data_avg.("X" + i + "_Y" + YY(k) + "_" + TT_name(j));
+            Theory(k) = path.Fy;
+            Exp(k) = path.Fy_Mea;
+        end
+        subplot(3,2,j)
+        hold on
+        plot(str2double(YY), Theory)
+        plot(str2double(YY), Exp)
+        xlabel("Y [mm]")
+        ylabel("Fy [N]")
+        ylim([-20 20])
+        legend(["Theory", "Exp"])
+        title("T" + TT(j))
+    end
+end
+
+clear i j k path Theory Exp
+
+
+
+
 
 %% Function
 
