@@ -50,61 +50,66 @@ clear i j k l Tname varname filename
 
 
 
-%% Plot average Fx
+%% Plot Fx
 
 for i = XX
     figure()
     sgtitle("X" + i + " " + " Fx")
     for j = 1:length(TT_name)
-
-        for k = 1:length(YY)
-            path = data_avg.("X" + i + "_Y" + YY(k) + "_" + TT_name(j));
-            Theory(k) = path.Fx;
-            Exp(k) = path.Fx_Mea;
-        end
         subplot(3,2,j)
         hold on
+        for k = 1:length(YY)
+            path = data.("X" + i + "_Y" + YY(k) + "_" + TT_name(j));
+            path_avg = data_avg.("X" + i + "_Y" + YY(k) + "_" + TT_name(j));
+            scatter(str2double(YY(k))*ones(1,length(path.y)),path.Fx_Mea, 'filled')
+            Theory(k) = path_avg.Fx;
+            Exp(k) = path_avg.Fx_Mea;
+        end
+     
         plot(str2double(YY), Theory)
         plot(str2double(YY), Exp)
         xlabel("Y [mm]")
         ylabel("Fx [N]")
         ylim([-12 12])
-        legend(["Theory", "Exp"])
+%         legend(["Theory", "Exp"])
+        legend([YY,"Theory","Exp"])
         title("T" + TT(j))
     end
 end
 
-clear i j k path Theory Exp
+clear i j k path_avg Theory Exp path
 
 
 
-%% plot average Fy
 
+%% Plot Fy
 
 for i = XX
     figure()
     sgtitle("X" + i + " " + " Fy")
     for j = 1:length(TT_name)
-
-        for k = 1:length(YY)
-            path = data_avg.("X" + i + "_Y" + YY(k) + "_" + TT_name(j));
-            Theory(k) = path.Fy;
-            Exp(k) = path.Fy_Mea;
-        end
         subplot(3,2,j)
         hold on
+        for k = 1:length(YY)
+            path = data.("X" + i + "_Y" + YY(k) + "_" + TT_name(j));
+            path_avg = data_avg.("X" + i + "_Y" + YY(k) + "_" + TT_name(j));
+            scatter(str2double(YY(k))*ones(1,length(path.y)),path.Fy_Mea, 'filled')
+            Theory(k) = path_avg.Fy;
+            Exp(k) = path_avg.Fy_Mea;
+        end
+     
         plot(str2double(YY), Theory)
         plot(str2double(YY), Exp)
         xlabel("Y [mm]")
         ylabel("Fy [N]")
-        ylim([-20 20])
-        legend(["Theory", "Exp"])
+        ylim([-12 12])
+%         legend(["Theory", "Exp"])
+        legend([YY,"Theory","Exp"])
         title("T" + TT(j))
     end
 end
 
-clear i j k path Theory Exp
-
+clear i j k path_avg Theory Exp path
 
 
 
