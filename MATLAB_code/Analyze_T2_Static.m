@@ -73,7 +73,9 @@ for i = XX
         ylim([-12 12])
 %         legend(["Theory", "Exp"])
         legend([YY,"Theory","Exp"])
+        legend('Location','eastoutside')
         title("T" + TT(j))
+        hold off
     end
 end
 
@@ -105,13 +107,135 @@ for i = XX
         ylim([-12 12])
 %         legend(["Theory", "Exp"])
         legend([YY,"Theory","Exp"])
-        title("T" + TT(j))
+        title("T" + TT_name(j))
     end
 end
 
 clear i j k path_avg Theory Exp path
 
 
+%% Plot 3D Fx
+
+figure()
+sgtitle("Fx")
+for i = 1:length(TT_name) 
+    subplot(3,2,i) 
+    hold on
+    for j = XX
+        for k = 1:length(YY)
+            path = data.("X" + j + "_Y" + YY(k) + "_" + TT_name(i));
+            path_avg = data_avg.("X" + j + "_Y" + YY(k) + "_" + TT_name(i));
+            scatter3(str2double(j)*10*ones(1,length(path.y)),str2double(YY(k))*ones(1,length(path.y)),path.Fx_Mea, 'filled')
+            Theory(k,:) = [10*str2double(j), str2double(YY(k)), path_avg.Fx];
+            Exp(k,:) = [10*str2double(j), str2double(YY(k)),path_avg.Fx_Mea];
+        end
+     
+        plot3(Theory(:,1), Theory(:,2), Theory(:,3))
+        plot3(Exp(:,1), Exp(:,2), Exp(:,3))
+        xlabel("X [mm]")
+        ylabel("Y [mm]")
+        zlabel("Fx [N]")
+        zlim([-12 12])
+        view(3)
+%         legend(["Theory", "Exp"])
+%         legend([YY,"Theory","Exp"])
+%         legend('Location','eastoutside')
+%         title("T" + TT(j))
+    end
+end
+
+clear i j k path_avg Theory Exp path
+
+
+%% Plot 3D Fy
+
+figure()
+sgtitle("Fy")
+for i = 1:length(TT_name) 
+    subplot(3,2,i) 
+    hold on
+    for j = XX
+        for k = 1:length(YY)
+            path = data.("X" + j + "_Y" + YY(k) + "_" + TT_name(i));
+            path_avg = data_avg.("X" + j + "_Y" + YY(k) + "_" + TT_name(i));
+            scatter3(str2double(j)*10*ones(1,length(path.y)),str2double(YY(k))*ones(1,length(path.y)),path.Fy_Mea, 'filled')
+            Theory(k,:) = [10*str2double(j), str2double(YY(k)), path_avg.Fy];
+            Exp(k,:) = [10*str2double(j), str2double(YY(k)),path_avg.Fy_Mea];
+        end
+     
+        plot3(Theory(:,1), Theory(:,2), Theory(:,3))
+        plot3(Exp(:,1), Exp(:,2), Exp(:,3))
+        xlabel("X [mm]")
+        ylabel("Y [mm]")
+        zlabel("Fy [N]")
+        zlim([-12 12])
+        view(3)
+%         legend(["Theory", "Exp"])
+%         legend([YY,"Theory","Exp"])
+%         legend('Location','eastoutside')
+%         title("T" + TT(j))
+    end
+end
+
+clear i j k path_avg Theory Exp path
+
+
+%% Surface Fx
+
+figure()
+sgtitle("Fx")
+for i = 1:length(TT_name) 
+    subplot(3,2,i) 
+    hold on
+    [X,Y] = meshgrid(10*str2double(XX),str2double(YY));
+    for j = 1:length(XX)
+        for k = 1:length(YY)
+            path_avg = data_avg.("X" + XX(j) + "_Y" + YY(k) + "_" + TT_name(i));
+            Theory(k,j) = path_avg.Fx;
+            Exp(k,j) = path_avg.Fx_Mea;
+        end  
+    end
+%     surf(X,Y,Theory,'EdgeColor','none', 'FaceAlpha', 0.5)
+    surf(X,Y,Exp,'EdgeColor','none')
+    xlabel("X [mm]")
+    ylabel("Y [mm]")
+    zlabel("Fx [N]")
+    zlim([-12 12])
+    title(TT_name(i))
+    view(3)
+    hold off
+end
+
+clear i j k path_avg Exp path X Y Theory
+
+
+%% Surface Fy
+
+figure()
+sgtitle("Fy")
+for i = 1:length(TT_name) 
+    subplot(3,2,i) 
+    hold on
+    [X,Y] = meshgrid(10*str2double(XX),str2double(YY));
+    for j = 1:length(XX)
+        for k = 1:length(YY)
+            path_avg = data_avg.("X" + XX(j) + "_Y" + YY(k) + "_" + TT_name(i));
+            Theory(k,j) = path_avg.Fy;
+            Exp(k,j) = path_avg.Fy_Mea;
+        end  
+    end
+%     surf(X,Y,Theory,'EdgeColor','none', 'FaceAlpha', 0.5)
+    surf(X,Y,Exp,'EdgeColor','none')
+    xlabel("X [mm]")
+    ylabel("Y [mm]")
+    zlabel("Fy [N]")
+    zlim([-12 12])
+    title(TT_name(i))
+    view(3)
+    hold off
+end
+
+clear i j k path_avg Exp path X Y Theory
 
 
 %% Function
