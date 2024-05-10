@@ -1,5 +1,10 @@
 import serial
 import datetime as dt
+import ftsensor
+import numpy as np
+import csv
+
+sensor = ftsensor.ftsensor()
 
 ENTER = bytes([0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFC])
 EXIT = bytes([0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFD])
@@ -129,49 +134,51 @@ if __name__ == "__main__":
         Motor_ser.write(bytes([0x01]) + ENTER)
         motor_id, enter_p, enter_v, enter_t = Motor_receive()
         enter_log.extend([motor_id, enter_p, enter_v, enter_t])
-        logs.append(enter_log)
+        # logs.append(enter_log)
         # Time for entering motor mode
         t_enter = dt.datetime.today().timestamp() - start_enter
 
+    sensor.start_task()
+    print("Set sensor bias")
+
+    t_bias = 1
+    start_bias = dt.datetime.today().timestamp()
+    values = []
+    while dt.datetime.today().timestamp() - start_bias < t_bias:
+        values.append(np.array(sensor.read_avg_voltage()))
+    values = np.array(values)
+    values = [ft.mean() for ft in values.transpose()]
+    sensor.set_bias(values)
+    sensor.stop_task()
+
     # n_iteration = 4
-    print("Going  back to home")
+    print("Entering main loop")
 
     # Read current pos
     motor_id, p, v, t = Motor_receive()
 
-    start_backward = dt.datetime.today().timestamp()
-    t_backward = 0
+    start_torque = dt.datetime.today().timestamp()
+    t_torque = 0
 
-    # Enter the torque to hold position here
-    # initial_ang =
-    initial_t = t_in = 0.55  # initial_ang * 5.23 * (47.7/2)**2
-    t_duration = 10
-    while t_backward < t_duration:
-
+    sensor.start_task()
+    while t_torque < 20:
         backward_log = []
-        # Move p backward 15 degree
-        # Edit value here for each trial
         p_in = 0
         kp_in = 0
         kd_in = 0
+        t_in = -2.0
 
-        t_backward = dt.datetime.today().timestamp() - start_backward
+        t_torque = dt.datetime.today().timestamp() - start_torque
         command = bytes(pack_cmd(p_in, v_in, t_in, kp_in, kd_in))
         Motor_ser.write(bytes([0x01]) + command)
         motor_id, p_back_receive, v, t = Motor_receive()
-        backward_log.extend([t_backward, motor_id, p_back_receive, v, t])
+        backward_log.extend([t_torque, motor_id, p_back_receive, v, t])
         print(backward_log)
-        logs.append(backward_log)
+        # logs.append(backward_log)
 
-        # Lowering Step
-        t_in = initial_t * (1 - t_backward / t_duration)
-        if t_in < 0:
-            print("GO to zero in break")
-            command = bytes(pack_cmd(0, 0, 0, 0, 0))
-            Motor_ser.write(bytes([0x01]) + command)
-            break
-    command = bytes(pack_cmd(0, 0, 0, 0, 0))
-    Motor_ser.write(bytes([0x01]) + command)
+        torque_reading = sensor.read_ft()[-1]
+        backward_log.extend([torque_reading])
+        logs.append(backward_log)
 
     # Exit motor mode
     Motor_ser.write(bytes([0x01]) + EXIT)
@@ -180,7 +187,9 @@ if __name__ == "__main__":
     # close the Motor_serial port
     Motor_ser.close()
 
-# Save logs as csv
-# with open("motor_logs.csv", "w", newline="") as csvfile:
-#     writer = csv.writer(csvfile)
-#     writer.writerows(logs[:])
+    sensor.stop_task()
+
+    # Save logs as csv
+    with open("motor_logs.csv", "w", newline="") as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerows(logs[:])

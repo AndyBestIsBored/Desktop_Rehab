@@ -97,13 +97,14 @@ def update_p(current_p, minus_val):
 def constrain(val, min_val, max_val):
     return min(max_val, max(min_val, val))
 
+
 # Set zero before enter motor to set current position to be zero
 # Enter motor mode -> then set zero -> motor first move to zero position
 
 
 if __name__ == "__main__":
     # open the Motor_serial port
-    Motor_ser = serial.Serial('COM4', 115200, timeout=1)
+    Motor_ser = serial.Serial("COM8", 115200, timeout=1)
 
     print("Begin")
     Motor_receive()
@@ -149,8 +150,9 @@ if __name__ == "__main__":
         # Edit value here for each trial
         p_in = p + move_angle
         p_in = constrain(p_in, P_MIN, P_MAX)
-        kp_in = 1.5
+        kp_in = 5
         kd_in = 0.2
+        t_in = move_angle * 5.23 * (47.7 / 2) ** 2 / 1000
 
         t_backward = dt.datetime.today().timestamp() - start_backward
         command = bytes(pack_cmd(p_in, v_in, t_in, kp_in, kd_in))
